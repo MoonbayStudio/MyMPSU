@@ -2,11 +2,11 @@
 set -eu
 
 if [ "$#" -ne 1 ] || [ ! -f "$1" ]; then
-  echo "Usage: $0 backups/myherzen-YYYYMMDD-HHMMSS.sql" >&2
+  echo "Usage: $0 backups/mympsu-YYYYMMDD-HHMMSS.sql" >&2
   exit 1
 fi
 
-echo "Restoring $1 replaces the current MyHerzen database contents."
+echo "Restoring $1 replaces the current MyMPSU database contents."
 printf "Type RESTORE to continue: "
 read -r confirmation
 if [ "$confirmation" != "RESTORE" ]; then

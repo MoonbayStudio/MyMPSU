@@ -3,7 +3,7 @@ set -eu
 
 mkdir -p backups
 timestamp="$(date '+%Y%m%d-%H%M%S')"
-output="backups/myherzen-${timestamp}.sql"
+output="backups/mympsu-${timestamp}.sql"
 
 docker compose exec -T db sh -c 'pg_dump \
   --username "$POSTGRES_USER" \

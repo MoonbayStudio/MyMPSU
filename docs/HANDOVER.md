@@ -1,6 +1,6 @@
-# MyHerzen handover checklist
+# MyMPSU handover checklist
 
-The goal of handover is to let a group of Herzen students maintain the official
+The goal of handover is to let a group of MPGU students maintain the independent
 service without depending on one former maintainer. Do not put passwords,
 private keys, tokens or database dumps in this document or in Git.
 

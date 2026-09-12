@@ -22,7 +22,7 @@ export function createApp(config: AppConfig, provider: ScheduleProvider): Expres
   });
 
   app.get("/health", (_request, response) => {
-    response.json({ status: "ok", service: "herzen-mcp" });
+    response.json({ status: "ok", service: "my-mpsu-schedule-mcp" });
   });
 
   app.post(

@@ -80,7 +80,7 @@ def seed_system_badges(db: Session) -> None:
         {
             "code": "first_tester",
             "title": "Первый тестер",
-            "description": "Выдан участникам первого закрытого тестирования MyHerzen",
+            "description": "Выдан участникам первого закрытого тестирования MyMPSU",
             "icon_name": "badge_first_tester",
             "rarity": "epic",
         },

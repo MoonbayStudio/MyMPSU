@@ -1,6 +1,6 @@
 # Installation and configuration
 
-This guide creates a new MyHerzen installation with an empty PostgreSQL
+This guide creates a new MyMPSU installation with an empty PostgreSQL
 database. Existing user accounts are not needed.
 
 ## 1. Prepare the host
@@ -20,8 +20,8 @@ docker compose version
 ## 2. Clone and configure
 
 ```bash
-git clone https://github.com/MoonbayStudio/MyHerzen.git
-cd MyHerzen
+git clone https://github.com/MoonbayStudio/MyMPSU.git
+cd MyMPSU
 cp .env.example .env
 ```
 
@@ -76,8 +76,32 @@ docker compose logs --tail=200 api db
 
 ### AI assistant
 
-Install Ollama on the Docker host, make it listen on an address reachable from
-containers, and download the selected model. For example:
+The simplest setup uses OpenRouter. Create an API key, then add these values to
+the root `.env` file (never to a client-side `VITE_*` variable):
+
+```dotenv
+ENABLE_AI_AGENT=true
+AI_PROVIDER=openrouter
+OPENROUTER_API_KEY=sk-or-v1-...
+OPENROUTER_MODEL=openrouter/free
+OPENROUTER_SITE_URL=https://mympsu.example.org
+OPENROUTER_APP_NAME=MyMPSU
+```
+
+`openrouter/free` lets OpenRouter select an available free model. To pin a
+specific free model later, replace `OPENROUTER_MODEL` with its current model ID
+ending in `:free`, then restart the API. Free models have lower rate limits and
+availability than paid models, so they are best suited to the first version and
+low-volume use.
+
+The assistant's main system prompt lives in
+`API/personas/default/pelikasha.md`; seasonal variants are in sibling persona
+folders. Schedule facts are appended by the backend from the selected group and
+date, so the model is instructed not to invent lessons.
+
+For a fully local alternative, install Ollama on the Docker host, make it listen
+on an address reachable from containers, and download the selected model. For
+example:
 
 ```bash
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
@@ -90,6 +114,7 @@ private host gateway added by `docker-compose.yml`. Set the same model name in
 
 ```dotenv
 ENABLE_AI_AGENT=true
+AI_PROVIDER=ollama
 OLLAMA_BASE_URL=http://host.docker.internal:11434
 PELIKASHA_MODEL=<model-name>
 ```
@@ -121,7 +146,7 @@ see the handover checklist before distributing a forked mobile build.
 
 ### DNS
 
-Create an `A` record such as `api.myherzen.example.org` pointing to the public
+Create an `A` record such as `api.mympsu.example.org` pointing to the public
 IPv4 address of the server. Add an `AAAA` record only if IPv6 is configured and
 protected by the firewall too.
 
@@ -130,8 +155,8 @@ Set these values in `.env`:
 ```dotenv
 API_BIND_ADDRESS=127.0.0.1
 API_PORT=8000
-FRONTEND_BASE_URL=https://myherzen.example.org
-CORS_ORIGINS=https://myherzen.example.org
+FRONTEND_BASE_URL=https://mympsu.example.org
+CORS_ORIGINS=https://mympsu.example.org
 ```
 
 ### Ports and firewall
@@ -156,7 +181,7 @@ to `127.0.0.1` by default.
 Install Caddy or nginx on the host. A minimal Caddy configuration is:
 
 ```caddyfile
-api.myherzen.example.org {
+api.mympsu.example.org {
     reverse_proxy 127.0.0.1:8000
 }
 ```
@@ -166,7 +191,7 @@ After DNS resolves to the server, start the containers and reload Caddy:
 ```bash
 docker compose up --build -d
 sudo systemctl reload caddy
-curl --fail https://api.myherzen.example.org/health
+curl --fail https://api.mympsu.example.org/health
 ```
 
 Do not expose FastAPI directly without HTTPS. Authentication tokens and account
@@ -191,7 +216,7 @@ curl --fail http://127.0.0.1:8000/openapi.json -o openapi.json
 Production examples:
 
 ```bash
-curl --fail https://api.myherzen.example.org/health
+curl --fail https://api.mympsu.example.org/health
 ```
 
 Swagger is useful for maintainers, but authenticated endpoints still require a

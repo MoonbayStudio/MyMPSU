@@ -1,4 +1,4 @@
-"""Create the database schema required by a fresh MyHerzen installation."""
+"""Create the database schema required by a fresh MyMPSU installation."""
 
 from app.db import models  # noqa: F401 - registers every SQLAlchemy model
 from app.db.session import Base, engine

@@ -1,4 +1,4 @@
-export const HERZEN_TIMEZONE = "Europe/Moscow" as const;
+export const MPGU_TIMEZONE = "Europe/Moscow" as const;
 
 export interface Group {
   id: number;
@@ -35,7 +35,7 @@ export interface GetScheduleInput {
 
 export interface GetScheduleResult {
   group: Group;
-  timezone: typeof HERZEN_TIMEZONE;
+  timezone: typeof MPGU_TIMEZONE;
   dateFrom: string;
   dateTo: string;
   days: ScheduleDay[];

@@ -6,25 +6,25 @@ export const errorCodes = [
   "UPSTREAM_UNAVAILABLE",
 ] as const;
 
-export type HerzenErrorCode = (typeof errorCodes)[number];
+export type MpguErrorCode = (typeof errorCodes)[number];
 
-export class HerzenMcpError extends Error {
+export class MpguMcpError extends Error {
   constructor(
-    public readonly code: HerzenErrorCode,
+    public readonly code: MpguErrorCode,
     message: string,
     public readonly details?: unknown,
   ) {
     super(message);
-    this.name = "HerzenMcpError";
+    this.name = "MpguMcpError";
   }
 }
 
 export function serializeError(error: unknown): {
-  code: HerzenErrorCode;
+  code: MpguErrorCode;
   message: string;
   details?: unknown;
 } {
-  if (error instanceof HerzenMcpError) {
+  if (error instanceof MpguMcpError) {
     return {
       code: error.code,
       message: error.message,
@@ -34,6 +34,6 @@ export function serializeError(error: unknown): {
 
   return {
     code: "UPSTREAM_UNAVAILABLE",
-    message: "The official Herzen schedule service is unavailable.",
+    message: "The official MyMPSU schedule service is unavailable.",
   };
 }

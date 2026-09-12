@@ -1,9 +1,9 @@
 import { createApp } from "./app.js";
 import { loadConfig } from "./config.js";
-import { HerzenScheduleProvider } from "./providers/schedule/HerzenScheduleProvider.js";
+import { MpguScheduleProvider } from "./providers/schedule/MpguScheduleProvider.js";
 
 const config = loadConfig();
-const provider = new HerzenScheduleProvider(config);
+const provider = new MpguScheduleProvider(config);
 const app = createApp(config, provider);
 
 const httpServer = app.listen(config.port, "0.0.0.0", () => {

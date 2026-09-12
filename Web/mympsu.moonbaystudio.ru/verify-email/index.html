@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой МПГУ — Подтверждение почты</title>
+  <meta name="description" content="Подтверждение почты Мой МПГУ: безопасная проверка адреса и привязка email к аккаунту.">
+  <meta name="theme-color" content="#050816">
+  <link rel="canonical" href="https://mympsu.moonbaystudio.ru/verify-email/">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="../img/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Мой МПГУ">
+  <meta property="og:title" content="Мой МПГУ — Подтверждение почты">
+  <meta property="og:description" content="Подтверждение почты Мой МПГУ: безопасная проверка адреса и привязка email к аккаунту.">
+  <meta property="og:url" content="https://mympsu.moonbaystudio.ru/verify-email/">
+  <meta property="og:image" content="https://mympsu.moonbaystudio.ru/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Мой МПГУ — Подтверждение почты">
+  <meta name="twitter:description" content="Подтверждение почты Мой МПГУ: безопасная проверка адреса и привязка email к аккаунту.">
+  <meta name="twitter:image" content="https://mympsu.moonbaystudio.ru/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <a class="brand-button" href="../" aria-label="Мой МПГУ">
+        <img src="../img/logo.png" alt="Мой МПГУ">
+      </a>
+      <nav class="top-nav-actions" aria-label="Навигация">
+        <a class="nav-pill" href="../news/">Новости</a> <a class="nav-pill" href="../download/">Скачать</a> <a class="nav-pill" href="../support/">Поддержка</a> <a class="nav-pill" href="../account/#register" data-auth-link="guest">Регистрация</a> <a class="nav-pill" href="../account/#login" data-auth-link="guest">Вход</a> <a class="nav-pill" href="../account/" data-auth-link="account" hidden>Аккаунт</a> <button type="button" class="nav-pill" data-auth-link="account" data-auth-action="logout" hidden>Выйти</button>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="badge">Подтверждение почты</span>
+        <h1>Email Мой МПГУ</h1>
+        <p id="verifyStatusMessage" class="auth-message" role="status" aria-live="polite">Подтверждаем почту...</p>
+        <div class="hero-actions"><a class="button primary" href="../">Вернуться на главную</a></div>
+      </div>
+      <div class="hero-stats">
+        <article class="stat-card"><span class="stat-label">Проверка</span><strong class="stat-value">Email</strong></article>
+        <article class="stat-card"><span class="stat-label">Аккаунт</span><strong class="stat-value">Мой МПГУ</strong></article>
+        <article class="stat-card wide"><span class="stat-label">API</span><strong class="stat-value small">api.mympsu.moonbaystudio.ru</strong></article>
+      </div>
+    </section>
+    <section class="panel section-panel">
+      <div class="section-head"><h2>Статус подтверждения</h2></div>
+      <div class="news-list">
+        <article id="verifyStatusCard" class="news-item" aria-busy="true">
+          <h3 id="verifyStatusTitle">Подтверждаем почту...</h3>
+          <p id="verifyStatusDetails">Это займёт несколько секунд. Не закрывайте страницу, пока идёт проверка.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <strong>Мой МПГУ</strong>
+        <span>Приложение для iOS, macOS и Android</span>
+      </div>
+      <div class="footer-links">
+        <a href="../terms/">Условия использования</a>
+        <a href="../privacy/">Политика конфиденциальности</a>
+        <a href="../cookies/">Политика Cookie</a>
+        <button type="button" data-cookie-settings>Настройки Cookie</button>
+      </div>
+      <div class="footer-right">
+        <span>© 2026 Moonbay Studio. Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../auth.js?v=20260613-account-ui-1"></script>
+  <script src="../nav.js?v=20260613-account-ui-1"></script>
+  <script src="../verify-email.js?v=20260613-account-ui-1"></script>
+  <script src="../cookies.js?v=20260613-account-ui-1"></script>
+</body>
+</html>

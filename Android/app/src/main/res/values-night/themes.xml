@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyHerzen" parent="android:Theme.Material.NoActionBar">
+    <style name="Theme.MyMPSU" parent="android:Theme.Material.NoActionBar">
         <item name="android:statusBarColor">#121212</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
@@ -8,6 +8,6 @@
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#121212</item>
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
-        <item name="postSplashScreenTheme">@style/Theme.MyHerzen</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyMPSU</item>
     </style>
 </resources>

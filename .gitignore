@@ -114,6 +114,8 @@ node_modules/
 
 dist/
 build/
+Desktop/src-tauri/target/
+Desktop/src-tauri/gen/
 
 # =========================
 # Temporary

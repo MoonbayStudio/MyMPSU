@@ -23,7 +23,7 @@ backup:
 	./scripts/db-backup.sh
 
 restore:
-	@test -n "$(FILE)" || (echo "Usage: make restore FILE=backups/myherzen-YYYYMMDD-HHMMSS.sql" && exit 1)
+	@test -n "$(FILE)" || (echo "Usage: make restore FILE=backups/mympsu-YYYYMMDD-HHMMSS.sql" && exit 1)
 	./scripts/db-restore.sh "$(FILE)"
 
 reset-db:

@@ -9,13 +9,16 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from starlette.requests import Request
 
-from app.core.config import OLLAMA_BASE_URL, PELIKASHA_MODEL
 from app.db.models import UsageLimit, User
 from app.schemas.assistant import AssistantChatRequest, AssistantChatResponse
 from app.services.assistant_policy_service import (
     PLAN_LIMITS,
     get_plan_message_length_limit,
     get_user_plan,
+)
+from app.services.ai_provider_service import (
+    AIProviderResponseError,
+    generate_assistant_reply,
 )
 from app.services.persona_service import load_persona_prompt
 from app.services.runtime_settings_service import get_runtime_setting_value
@@ -133,7 +136,7 @@ async def run_assistant_chat(
         if selected_date is None:
             selected_date = data.context.selectedDate
 
-    tz = zoneinfo.ZoneInfo("Europe/Helsinki")
+    tz = zoneinfo.ZoneInfo("Europe/Moscow")
     now = datetime.now(tz)
     parsed_date_info = parse_schedule_date(data.message, now)
     if parsed_date_info:
@@ -202,22 +205,9 @@ async def run_assistant_chat(
         {"role": "user", "content": data.message},
     ]
 
-    payload = {
-        "model": PELIKASHA_MODEL,
-        "messages": messages,
-        "stream": False,
-        "keep_alive": -1,
-    }
-
     try:
         async with httpx.AsyncClient(timeout=120.0) as client:
-            response = await client.post(
-                f"{OLLAMA_BASE_URL}/api/chat",
-                json=payload,
-            )
-            response.raise_for_status()
-            ollama_data = response.json()
-            reply = ollama_data.get("message", {}).get("content", "")
+            reply = await generate_assistant_reply(client, messages)
 
             if re.search(r"[\u4e00-\u9fff]", reply):
                 print("[AI Language Guard] chinese_detected=true", flush=True)
@@ -228,27 +218,27 @@ async def run_assistant_chat(
                     {"role": "user", "content": "Повтори ответ только на русском языке."}
                 )
 
-                retry_payload = {
-                    "model": PELIKASHA_MODEL,
-                    "messages": messages,
-                    "stream": False,
-                    "keep_alive": -1,
-                }
-
-                retry_response = await client.post(
-                    f"{OLLAMA_BASE_URL}/api/chat",
-                    json=retry_payload,
-                )
-                retry_response.raise_for_status()
-                retry_ollama_data = retry_response.json()
-                reply = retry_ollama_data.get("message", {}).get("content", "")
+                reply = await generate_assistant_reply(client, messages)
 
     except httpx.TimeoutException:
         raise HTTPException(status_code=504, detail="AI assistant timeout")
-    except httpx.RequestError:
-        raise HTTPException(status_code=502, detail="AI assistant is unavailable")
-    except Exception:
-        raise HTTPException(status_code=500, detail="Internal AI error")
+    except httpx.HTTPStatusError as error:
+        if error.response.status_code == 401:
+            detail = "OpenRouter API key is invalid"
+        elif error.response.status_code == 429:
+            detail = "AI provider rate limit reached"
+        else:
+            detail = "AI provider rejected the request"
+        raise HTTPException(status_code=502, detail=detail) from error
+    except httpx.RequestError as error:
+        raise HTTPException(status_code=502, detail="AI assistant is unavailable") from error
+    except AIProviderResponseError as error:
+        raise HTTPException(status_code=502, detail=str(error)) from error
+    except HTTPException:
+        raise
+    except Exception as error:
+        print(f"[AI Provider] unexpected_error={type(error).__name__}", flush=True)
+        raise HTTPException(status_code=500, detail="Internal AI error") from error
 
     if usage_record:
         usage_record.used_count += 1

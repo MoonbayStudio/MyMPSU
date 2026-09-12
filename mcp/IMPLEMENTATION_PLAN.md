@@ -1,9 +1,9 @@
-# Herzen MCP: technical plan for milestones 1-2
+# MyMPSU Schedule MCP: technical plan for milestones 1-2
 
-## Existing MyHerzen contract
+## Existing MyMPSU contract
 
-The iOS and Android apps both call the public Herzen schedule API directly at
-`https://api.herzen.spb.ru/schedule/v1` without a MyHerzen account token.
+The iOS and Android apps both call the public MyMPSU schedule API directly at
+`https://api.mympsu.moonbaystudio.ru/schedule/v1` without a MyMPSU account token.
 
 - `GET /groups` returns group `id`, `name`, and `faculty_id`.
 - `GET /faculties` returns faculty/institute `id` and `name`.
@@ -17,7 +17,7 @@ The iOS and Android apps both call the public Herzen schedule API directly at
   building address/name.
 
 The MCP provider intentionally mirrors this proven flow. It does not call the
-MyHerzen account/assistant backend and does not require a bearer token.
+MyMPSU account/assistant backend and does not require a bearer token.
 
 ## Implementation
 

@@ -13,7 +13,7 @@ import type { ScheduleProvider } from "../src/providers/schedule/ScheduleProvide
 
 const config: AppConfig = {
   port: 3000,
-  herzenApiBaseUrl: new URL("https://api.herzen.spb.ru/schedule/v1"),
+  mpguScheduleApiBaseUrl: new URL("https://api.mympsu.moonbaystudio.ru/schedule/v1"),
   upstreamTimeoutMs: 1_000,
   metadataCacheMs: 600_000,
   rateLimitWindowMs: 60_000,
@@ -36,8 +36,8 @@ class FixtureProvider implements ScheduleProvider {
       dateTo: input.dateTo ?? input.dateFrom ?? "2026-09-01",
       days: [{ date: input.dateFrom ?? "2026-09-01", lessons: [] }],
       source: {
-        name: "Official Herzen University schedule API",
-        url: "https://api.herzen.spb.ru/schedule/v1/schedule",
+        name: "MyMPSU schedule API",
+        url: "https://api.mympsu.moonbaystudio.ru/schedule/v1/schedule",
       },
     };
   }
@@ -54,7 +54,7 @@ async function connectClient(): Promise<Client> {
   const httpServer = app.listen(0, "127.0.0.1");
   await new Promise<void>((resolve) => httpServer.once("listening", resolve));
   const address = httpServer.address() as AddressInfo;
-  const client = new Client({ name: "herzen-mcp-test", version: "1.0.0" });
+  const client = new Client({ name: "my-mpsu-schedule-mcp-test", version: "1.0.0" });
   const transport = new StreamableHTTPClientTransport(
     new URL(`http://127.0.0.1:${address.port}/mcp`),
   );

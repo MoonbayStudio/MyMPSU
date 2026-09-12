@@ -38,7 +38,7 @@ Create a SQL backup while the database is running:
 make backup
 ```
 
-The dump is written to `backups/myherzen-YYYYMMDD-HHMMSS.sql`. The directory is
+The dump is written to `backups/mympsu-YYYYMMDD-HHMMSS.sql`. The directory is
 ignored by Git. Copy backups to encrypted storage on a different machine.
 
 A backup is not considered valid until a test restore has succeeded. Keep at
@@ -49,7 +49,7 @@ least several recent daily copies and one older monthly copy.
 Use a backup produced by the same or a compatible application version:
 
 ```bash
-make restore FILE=backups/myherzen-YYYYMMDD-HHMMSS.sql
+make restore FILE=backups/mympsu-YYYYMMDD-HHMMSS.sql
 ```
 
 The command stops the API, asks for explicit confirmation, restores PostgreSQL
@@ -128,7 +128,7 @@ From outside the server, only HTTPS should be needed by the mobile and web
 clients. Periodically verify:
 
 ```bash
-curl --fail https://api.myherzen.example.org/health
+curl --fail https://api.mympsu.example.org/health
 ```
 
 Confirm with the host firewall or hosting control panel that PostgreSQL `5432`,

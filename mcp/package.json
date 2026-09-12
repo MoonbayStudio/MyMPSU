@@ -1,8 +1,8 @@
 {
-  "name": "herzen-mcp",
+  "name": "my-mpsu-schedule-mcp",
   "version": "0.1.0",
   "private": true,
-  "description": "Vendor-neutral remote MCP server for official Herzen University schedule data.",
+  "description": "Vendor-neutral MCP server for a future MyMPSU schedule API.",
   "type": "module",
   "engines": {
     "node": ">=22"

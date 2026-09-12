@@ -966,8 +966,8 @@ async def apple_callback(
         result = await apple_login(request, login_data, db)
         token = result["token"]
         # 4. Редиректим обратно в мобильное приложение через Deep Link
-        return RedirectResponse(url=f"myherzen://auth?token={token}", status_code=303)
+        return RedirectResponse(url=f"mympsu://auth?token={token}", status_code=303)
     except Exception as e:
         print(f"Apple callback error: {e}")
         # В случае ошибки возвращаем в приложение с ошибкой
-        return RedirectResponse(url=f"myherzen://auth?error=auth_failed", status_code=303)
+        return RedirectResponse(url=f"mympsu://auth?error=auth_failed", status_code=303)

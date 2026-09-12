@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "desktop",
+  "description": "Minimum permissions used by the main MyMPSU window",
+  "windows": ["main"],
+  "platforms": ["macOS", "windows", "linux"],
+  "permissions": [
+    "core:default",
+    "os:default",
+    "store:default",
+    "notification:default",
+    "window-state:default"
+  ]
+}

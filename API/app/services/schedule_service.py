@@ -5,9 +5,9 @@ import requests
 from fastapi import HTTPException
 
 from app.core.config import (
-    HERZEN_API_BASE_URL,
-    HERZEN_API_TIMEOUT_SECONDS,
-    HERZEN_SCHEDULE_API_PATH,
+    MPGU_SCHEDULE_API_BASE_URL,
+    MPGU_SCHEDULE_API_TIMEOUT_SECONDS,
+    MPGU_SCHEDULE_API_PATH,
 )
 from app.utils.common import normalize_optional_string, parse_int
 
@@ -184,21 +184,23 @@ def parse_schedule_lessons(raw_items: List[Dict[str, Any]]) -> List[Dict[str, An
     return lessons
 
 
-def request_herzen_api(path: str, params: Optional[Dict[str, Any]] = None) -> Tuple[int, Any]:
-    url = f"{HERZEN_API_BASE_URL}{path}"
+def request_mpgu_api(path: str, params: Optional[Dict[str, Any]] = None) -> Tuple[int, Any]:
+    if not MPGU_SCHEDULE_API_BASE_URL:
+        raise HTTPException(status_code=503, detail="Расписание МПГУ ещё не подключено")
+    url = f"{MPGU_SCHEDULE_API_BASE_URL}{path}"
 
     try:
-        response = requests.get(url, params=params, timeout=HERZEN_API_TIMEOUT_SECONDS)
+        response = requests.get(url, params=params, timeout=MPGU_SCHEDULE_API_TIMEOUT_SECONDS)
     except requests.RequestException as error:
-        raise HTTPException(status_code=502, detail="Herzen API is unavailable") from error
+        raise HTTPException(status_code=502, detail="MyMPSU schedule API is unavailable") from error
 
     if response.status_code >= 500:
-        raise HTTPException(status_code=502, detail="Herzen API server error")
+        raise HTTPException(status_code=502, detail="MyMPSU schedule API server error")
 
     try:
         payload = response.json()
     except ValueError as error:
-        raise HTTPException(status_code=502, detail="Herzen API returned invalid JSON") from error
+        raise HTTPException(status_code=502, detail="MyMPSU schedule API returned invalid JSON") from error
 
     return response.status_code, payload
 
@@ -226,8 +228,8 @@ def get_schedule_entries_for_group(
     ]
 
     for params in params_variants:
-        status_code, payload = request_herzen_api(
-            path=HERZEN_SCHEDULE_API_PATH,
+        status_code, payload = request_mpgu_api(
+            path=MPGU_SCHEDULE_API_PATH,
             params=params,
         )
 
@@ -239,12 +241,12 @@ def get_schedule_entries_for_group(
 
         raise HTTPException(
             status_code=502,
-            detail="Failed to fetch schedule from Herzen API",
+            detail="Failed to fetch schedule from MyMPSU schedule API",
         )
 
     raise HTTPException(
         status_code=502,
-        detail="Failed to fetch schedule from Herzen API",
+        detail="Failed to fetch schedule from MyMPSU schedule API",
     )
 
 
@@ -262,7 +264,7 @@ def get_teacher_names(teacher_ids: Set[int]) -> Dict[int, str]:
     teacher_names: Dict[int, str] = {}
 
     for params in params_variants:
-        status_code, payload = request_herzen_api(path="/teachers", params=params)
+        status_code, payload = request_mpgu_api(path="/teachers", params=params)
 
         if status_code == 200:
             for teacher in extract_items(payload):
@@ -294,6 +296,6 @@ def get_teacher_names(teacher_ids: Set[int]) -> Dict[int, str]:
         if status_code in (400, 404, 422):
             continue
 
-        raise HTTPException(status_code=502, detail="Failed to fetch teachers from Herzen API")
+        raise HTTPException(status_code=502, detail="Failed to fetch teachers from MyMPSU schedule API")
 
     return teacher_names

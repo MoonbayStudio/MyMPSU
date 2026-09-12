@@ -26,7 +26,7 @@ def _resolve_active_persona_theme() -> Tuple[str, Optional[str]]:
     if active_persona_theme != "auto":
         return active_persona_theme, None
 
-    now = datetime.now(zoneinfo.ZoneInfo("Europe/Helsinki"))
+    now = datetime.now(zoneinfo.ZoneInfo("Europe/Moscow"))
     resolved = resolve_persona_theme(now)
     theme_dir = os.path.join(PERSONAS_DIR, resolved)
     if not os.path.isdir(theme_dir):

@@ -3,7 +3,7 @@ import zoneinfo
 from app.utils.dates import parse_schedule_date
 
 def test_parse_schedule_date():
-    tz = zoneinfo.ZoneInfo("Europe/Helsinki")
+    tz = zoneinfo.ZoneInfo("Europe/Moscow")
     now = datetime(2026, 5, 23, 12, 0, 0, tzinfo=tz) # Saturday
 
     cases = [

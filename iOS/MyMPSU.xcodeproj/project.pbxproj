@@ -1,0 +1,1026 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B0802722FABBCC7001AA605 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 1B0802712FABBCC7001AA605 /* SwiftCSV */; };
+		1B08027A2FABCC54001AA605 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0C5A1F2EB9FD9100BBCB1B /* WidgetKit.framework */; };
+		1B08027B2FABCC54001AA605 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0C5A212EB9FD9100BBCB1B /* SwiftUI.framework */; };
+		1B08028C2FABCC55001AA605 /* MyMPSUWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1B0802792FABCC53001AA605 /* MyMPSUWidgetExtension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1B55FC6B2E941BA900E53B3D /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 1B55FC6A2E941BA900E53B3D /* SwiftCSV */; };
+		1B7D7B532FD53FE50021A5BE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7D7B522FD53FE50021A5BE /* GoogleSignIn */; };
+		1B7D7B552FD53FE50021A5BE /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B7D7B542FD53FE50021A5BE /* GoogleSignInSwift */; };
+		1B9C673A2E9B350300DF5121 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9C67392E9B350300DF5121 /* SystemConfiguration.framework */; };
+		1BC7601D2E9182690053C718 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 1BC7601C2E9182690053C718 /* SwiftCSV */; };
+		1BC760202E9182B80053C718 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 1BC7601F2E9182B80053C718 /* SwiftCSV */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B08028A2FABCC55001AA605 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD029342E8C86E700A50B62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B0802782FABCC53001AA605;
+			remoteInfo = MyMPSUWidgetExtension;
+		};
+		1BD0294A2E8C86E800A50B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD029342E8C86E700A50B62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BD0293B2E8C86E700A50B62;
+			remoteInfo = MyMPSU;
+		};
+		1BD029542E8C86E800A50B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BD029342E8C86E700A50B62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BD0293B2E8C86E700A50B62;
+			remoteInfo = MyMPSU;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B0C5A302EB9FD9300BBCB1B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1B08028C2FABCC55001AA605 /* MyMPSUWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B0802792FABCC53001AA605 /* MyMPSUWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyMPSUWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0C5A1F2EB9FD9100BBCB1B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		1B0C5A212EB9FD9100BBCB1B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		1B592D302FD52F3800D38725 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		1B592D312FD52F3800D38725 /* AssistantChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantChatViewModel.swift; sourceTree = "<group>"; };
+		1B592D322FD52F3800D38725 /* AssistantMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMessage.swift; sourceTree = "<group>"; };
+		1B592D332FD52F3800D38725 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		1B592D342FD52F3800D38725 /* Group and Institute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group and Institute.swift"; sourceTree = "<group>"; };
+		1B592D352FD52F3800D38725 /* PelikashaChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelikashaChatViewModel.swift; sourceTree = "<group>"; };
+		1B592D362FD52F3800D38725 /* PelikashaIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelikashaIntent.swift; sourceTree = "<group>"; };
+		1B592D372FD52F3800D38725 /* PelikashaMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelikashaMessage.swift; sourceTree = "<group>"; };
+		1B592D382FD52F3800D38725 /* RuntimeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeModels.swift; sourceTree = "<group>"; };
+		1B592D392FD52F3800D38725 /* ScheduleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItem.swift; sourceTree = "<group>"; };
+		1B592D3A2FD52F3800D38725 /* ScheduleItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemCard.swift; sourceTree = "<group>"; };
+		1B592D3B2FD52F3800D38725 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		1B7D760B2FD536A50021A5BE /* MyMPSU.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MyMPSU.xcodeproj; sourceTree = "<group>"; };
+		1B7D774F2FD53D6C0021A5BE /* MyMPSU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyMPSU.entitlements; sourceTree = "<group>"; };
+		1B9C67392E9B350300DF5121 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1BBBE4442FD5361A0034CD89 /* MyMPSU.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MyMPSU.xcodeproj; sourceTree = "<group>"; };
+		1BD0293C2E8C86E700A50B62 /* MyMPSU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMPSU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD029492E8C86E800A50B62 /* MyMPSUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMPSUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BD029532E8C86E800A50B62 /* MyMPSUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMPSUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1B7D7AFF2FD53E9B0021A5BE /* Exceptions for "MyMPSUWidget" folder in "MyMPSUWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntent.swift,
+				Assets.xcassets,
+				Info.plist,
+				MyMPSUWidget.swift,
+				MyMPSUWidgetBundle.swift,
+				MyMPSUWidgetControl.swift,
+				MyMPSUWidgetLiveActivity.swift,
+			);
+			target = 1B0802782FABCC53001AA605 /* MyMPSUWidgetExtension */;
+		};
+		1B7D7B4F2FD53F8F0021A5BE /* Exceptions for "MyMPSU" folder in "MyMPSU" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1BD0293B2E8C86E700A50B62 /* MyMPSU */;
+		};
+		1B7D7B502FD53F9D0021A5BE /* Exceptions for "MyMPSU" folder in "MyMPSUWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Extensions/CalendarDatePicker.swift,
+				"Extensions/Glass+Compat.swift",
+				Extensions/Locallized.swift,
+				Extensions/MyMPSUBackendSystem.swift,
+				Extensions/MyMPSUViewModifiers.swift,
+				Info.plist,
+				Models/AppTheme.swift,
+				Models/AssistantChatViewModel.swift,
+				Models/AssistantMessage.swift,
+				Models/AuthModels.swift,
+				"Models/Group and Institute.swift",
+				Models/PelikashaChatViewModel.swift,
+				Models/PelikashaIntent.swift,
+				Models/PelikashaMessage.swift,
+				Models/RuntimeModels.swift,
+				Models/ScheduleItem.swift,
+				Models/ScheduleItemCard.swift,
+				Models/ScheduleViewModel.swift,
+				MyMPSUApp.swift,
+				Services/APIService.swift,
+				Services/AppLockManager.swift,
+				Services/AssistantAPIService.swift,
+				Services/AuthSessionManager.swift,
+				Services/GoogleSignInService.swift,
+				Services/KeychainHelper.swift,
+				Services/LiveActivityManager.swift,
+				Services/PelikashaIntentRouter.swift,
+				Services/PelikashaScheduleContextBuilder.swift,
+				Services/PelikashaScheduleProvider.swift,
+				Services/PelikashaService.swift,
+				Services/RuntimeConfigService.swift,
+				Services/ScheduleLiveActivityBackgroundScheduler.swift,
+				Services/SubscriptionManager.swift,
+				Services/SyncGroups.swift,
+				Services/UserSettingsSyncService.swift,
+				Views/Admin/AdminRuntimeSettingsView.swift,
+				Views/Admin/AdminSystemNoticesView.swift,
+				Views/Admin/AdminUserSessionsSection.swift,
+				Views/Admin/AdminUsersView.swift,
+				Views/Admin/RoleBadgeView.swift,
+				Views/Admin/RoleRequestsView.swift,
+				Views/Assistant/AssistantChatView.swift,
+				Views/Assistant/PelikashaChatView.swift,
+				Views/Assistant/ThinkingInputBar.swift,
+				Views/Auth/AccountSessionsView.swift,
+				Views/Auth/AccountView.swift,
+				Views/Auth/PasswordSettingsDestinationView.swift,
+				Views/Auth/PasswordViews.swift,
+				Views/Premium/PremiumView.swift,
+				Views/Root/BottomIsland.swift,
+				Views/Root/ContentView.swift,
+				Views/Root/LaunchView.swift,
+				Views/Root/MenuDestinationView.swift,
+				Views/Root/MenuView.swift,
+				Views/Root/OnboardingView.swift,
+				Views/Root/RuntimeNoticeViews.swift,
+				Views/Root/SidebarView.swift,
+				Views/Root/ThemedChrome.swift,
+				Views/Schedule/ActiveLessonNotificationView.swift,
+				Views/Schedule/GroupSelectionView.swift,
+				Views/Schedule/ScheduleView.swift,
+				Views/Settings/AboutAppView.swift,
+				Views/Settings/AccessibilitySettingsView.swift,
+				Views/Settings/AppLockViews.swift,
+				Views/Settings/DeveloperToolsView.swift,
+				Views/Settings/SettingsView.swift,
+				Views/Settings/ThemesView.swift,
+			);
+			target = 1B0802782FABCC53001AA605 /* MyMPSUWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1B7D7AA82FD53E330021A5BE /* MyMPSU */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1B7D7B4F2FD53F8F0021A5BE /* Exceptions for "MyMPSU" folder in "MyMPSU" target */,
+				1B7D7B502FD53F9D0021A5BE /* Exceptions for "MyMPSU" folder in "MyMPSUWidgetExtension" target */,
+			);
+			path = MyMPSU;
+			sourceTree = "<group>";
+		};
+		1B7D7AEE2FD53E3B0021A5BE /* MyMPSULiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyMPSULiveActivity;
+			sourceTree = "<group>";
+		};
+		1B7D7AFE2FD53E9A0021A5BE /* MyMPSUWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1B7D7AFF2FD53E9B0021A5BE /* Exceptions for "MyMPSUWidget" folder in "MyMPSUWidgetExtension" target */,
+			);
+			path = MyMPSUWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B0802762FABCC53001AA605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B08027B2FABCC54001AA605 /* SwiftUI.framework in Frameworks */,
+				1B08027A2FABCC54001AA605 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029392E8C86E700A50B62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0802722FABBCC7001AA605 /* SwiftCSV in Frameworks */,
+				1B9C673A2E9B350300DF5121 /* SystemConfiguration.framework in Frameworks */,
+				1B7D7B552FD53FE50021A5BE /* GoogleSignInSwift in Frameworks */,
+				1B55FC6B2E941BA900E53B3D /* SwiftCSV in Frameworks */,
+				1BC7601D2E9182690053C718 /* SwiftCSV in Frameworks */,
+				1BC760202E9182B80053C718 /* SwiftCSV in Frameworks */,
+				1B7D7B532FD53FE50021A5BE /* GoogleSignIn in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029462E8C86E800A50B62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029502E8C86E800A50B62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B592D3C2FD52F3800D38725 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B592D302FD52F3800D38725 /* AppTheme.swift */,
+				1B592D312FD52F3800D38725 /* AssistantChatViewModel.swift */,
+				1B592D322FD52F3800D38725 /* AssistantMessage.swift */,
+				1B592D332FD52F3800D38725 /* AuthModels.swift */,
+				1B592D342FD52F3800D38725 /* Group and Institute.swift */,
+				1B592D352FD52F3800D38725 /* PelikashaChatViewModel.swift */,
+				1B592D362FD52F3800D38725 /* PelikashaIntent.swift */,
+				1B592D372FD52F3800D38725 /* PelikashaMessage.swift */,
+				1B592D382FD52F3800D38725 /* RuntimeModels.swift */,
+				1B592D392FD52F3800D38725 /* ScheduleItem.swift */,
+				1B592D3A2FD52F3800D38725 /* ScheduleItemCard.swift */,
+				1B592D3B2FD52F3800D38725 /* ScheduleViewModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1B7D760D2FD536A50021A5BE /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B9C67382E9B350300DF5121 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B9C67392E9B350300DF5121 /* SystemConfiguration.framework */,
+				1B0C5A1F2EB9FD9100BBCB1B /* WidgetKit.framework */,
+				1B0C5A212EB9FD9100BBCB1B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BBBE4452FD5361A0034CD89 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BD029332E8C86E700A50B62 = {
+			isa = PBXGroup;
+			children = (
+				1B9C67382E9B350300DF5121 /* Frameworks */,
+				1BD0293D2E8C86E700A50B62 /* Products */,
+				1B592D3C2FD52F3800D38725 /* Models */,
+				1B7D7AA82FD53E330021A5BE /* MyMPSU */,
+				1B7D7AEE2FD53E3B0021A5BE /* MyMPSULiveActivity */,
+				1B7D774F2FD53D6C0021A5BE /* MyMPSU.entitlements */,
+				1B7D7AFE2FD53E9A0021A5BE /* MyMPSUWidget */,
+			);
+			sourceTree = "<group>";
+		};
+		1BD0293D2E8C86E700A50B62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BD0293C2E8C86E700A50B62 /* MyMPSU.app */,
+				1BD029492E8C86E800A50B62 /* MyMPSUTests.xctest */,
+				1BD029532E8C86E800A50B62 /* MyMPSUUITests.xctest */,
+				1B0802792FABCC53001AA605 /* MyMPSUWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B0802782FABCC53001AA605 /* MyMPSUWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B08028E2FABCC55001AA605 /* Build configuration list for PBXNativeTarget "MyMPSUWidgetExtension" */;
+			buildPhases = (
+				1B0802762FABCC53001AA605 /* Frameworks */,
+				1B7D76662FD538550021A5BE /* Sources */,
+				1B7D76672FD538580021A5BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1B7D7AA82FD53E330021A5BE /* MyMPSU */,
+				1B7D7AEE2FD53E3B0021A5BE /* MyMPSULiveActivity */,
+				1B7D7AFE2FD53E9A0021A5BE /* MyMPSUWidget */,
+			);
+			name = MyMPSUWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MyMPSUWidgetExtension;
+			productReference = 1B0802792FABCC53001AA605 /* MyMPSUWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		1BD0293B2E8C86E700A50B62 /* MyMPSU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD0295D2E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSU" */;
+			buildPhases = (
+				1BD029392E8C86E700A50B62 /* Frameworks */,
+				1B0C5A302EB9FD9300BBCB1B /* Embed Foundation Extensions */,
+				1B7D76642FD538310021A5BE /* Resources */,
+				1B7D76652FD538330021A5BE /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B08028B2FABCC55001AA605 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1B7D7AA82FD53E330021A5BE /* MyMPSU */,
+			);
+			name = MyMPSU;
+			packageProductDependencies = (
+				1BC7601C2E9182690053C718 /* SwiftCSV */,
+				1BC7601F2E9182B80053C718 /* SwiftCSV */,
+				1B55FC6A2E941BA900E53B3D /* SwiftCSV */,
+				1B0802712FABBCC7001AA605 /* SwiftCSV */,
+				1B7D7B522FD53FE50021A5BE /* GoogleSignIn */,
+				1B7D7B542FD53FE50021A5BE /* GoogleSignInSwift */,
+			);
+			productName = MyMPSU;
+			productReference = 1BD0293C2E8C86E700A50B62 /* MyMPSU.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BD029482E8C86E800A50B62 /* MyMPSUTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD029602E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSUTests" */;
+			buildPhases = (
+				1BD029452E8C86E800A50B62 /* Sources */,
+				1BD029462E8C86E800A50B62 /* Frameworks */,
+				1BD029472E8C86E800A50B62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BD0294B2E8C86E800A50B62 /* PBXTargetDependency */,
+			);
+			name = MyMPSUTests;
+			packageProductDependencies = (
+			);
+			productName = MyMPSUTests;
+			productReference = 1BD029492E8C86E800A50B62 /* MyMPSUTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1BD029522E8C86E800A50B62 /* MyMPSUUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BD029632E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSUUITests" */;
+			buildPhases = (
+				1BD0294F2E8C86E800A50B62 /* Sources */,
+				1BD029502E8C86E800A50B62 /* Frameworks */,
+				1BD029512E8C86E800A50B62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BD029552E8C86E800A50B62 /* PBXTargetDependency */,
+			);
+			name = MyMPSUUITests;
+			packageProductDependencies = (
+			);
+			productName = MyMPSUUITests;
+			productReference = 1BD029532E8C86E800A50B62 /* MyMPSUUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BD029342E8C86E700A50B62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					1B0802782FABCC53001AA605 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					1BD0293B2E8C86E700A50B62 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					1BD029482E8C86E800A50B62 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 1BD0293B2E8C86E700A50B62;
+					};
+					1BD029522E8C86E800A50B62 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 1BD0293B2E8C86E700A50B62;
+					};
+				};
+			};
+			buildConfigurationList = 1BD029372E8C86E700A50B62 /* Build configuration list for PBXProject "MyMPSU" */;
+			developmentRegion = ru;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+				"zh-Hans",
+			);
+			mainGroup = 1BD029332E8C86E700A50B62;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1B0802702FABBCC7001AA605 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				1B7D7B512FD53FE50021A5BE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1BD0293D2E8C86E700A50B62 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1B7D760D2FD536A50021A5BE /* Products */;
+					ProjectRef = 1B7D760B2FD536A50021A5BE /* MyMPSU.xcodeproj */;
+				},
+				{
+					ProductGroup = 1BBBE4452FD5361A0034CD89 /* Products */;
+					ProjectRef = 1BBBE4442FD5361A0034CD89 /* MyMPSU.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1BD0293B2E8C86E700A50B62 /* MyMPSU */,
+				1BD029482E8C86E800A50B62 /* MyMPSUTests */,
+				1BD029522E8C86E800A50B62 /* MyMPSUUITests */,
+				1B0802782FABCC53001AA605 /* MyMPSUWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B7D76642FD538310021A5BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B7D76672FD538580021A5BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029472E8C86E800A50B62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029512E8C86E800A50B62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B7D76652FD538330021A5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B7D76662FD538550021A5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD029452E8C86E800A50B62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BD0294F2E8C86E800A50B62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B08028B2FABCC55001AA605 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 1B0802782FABCC53001AA605 /* MyMPSUWidgetExtension */;
+			targetProxy = 1B08028A2FABCC55001AA605 /* PBXContainerItemProxy */;
+		};
+		1BD0294B2E8C86E800A50B62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BD0293B2E8C86E700A50B62 /* MyMPSU */;
+			targetProxy = 1BD0294A2E8C86E800A50B62 /* PBXContainerItemProxy */;
+		};
+		1BD029552E8C86E800A50B62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BD0293B2E8C86E700A50B62 /* MyMPSU */;
+			targetProxy = 1BD029542E8C86E800A50B62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B08028F2FABCC55001AA605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyMPSUWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMPSUWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Мой МПГУ — расписание";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSU.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B0802902FABCC55001AA605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyMPSUWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMPSUWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Мой МПГУ — расписание";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSU.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1BD0295B2E8C86E800A50B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = F86K9K6RB3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1BD0295C2E8C86E800A50B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = F86K9K6RB3;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BD0295E2E8C86E800A50B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = MyMPSU.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMPSU/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Мой МПГУ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BD0295F2E8C86E800A50B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = MyMPSU.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMPSU/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Мой МПГУ";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 0.9;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSU;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1BD029612E8C86E800A50B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSUTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMPSU.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyMPSU";
+			};
+			name = Debug;
+		};
+		1BD029622E8C86E800A50B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSUTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyMPSU.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyMPSU";
+			};
+			name = Release;
+		};
+		1BD029642E8C86E800A50B62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSUUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyMPSU;
+			};
+			name = Debug;
+		};
+		1BD029652E8C86E800A50B62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MoonbayStudio.MyMPSUUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyMPSU;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B08028E2FABCC55001AA605 /* Build configuration list for PBXNativeTarget "MyMPSUWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B08028F2FABCC55001AA605 /* Debug */,
+				1B0802902FABCC55001AA605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD029372E8C86E700A50B62 /* Build configuration list for PBXProject "MyMPSU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD0295B2E8C86E800A50B62 /* Debug */,
+				1BD0295C2E8C86E800A50B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD0295D2E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD0295E2E8C86E800A50B62 /* Debug */,
+				1BD0295F2E8C86E800A50B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD029602E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSUTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD029612E8C86E800A50B62 /* Debug */,
+				1BD029622E8C86E800A50B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BD029632E8C86E800A50B62 /* Build configuration list for PBXNativeTarget "MyMPSUUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BD029642E8C86E800A50B62 /* Debug */,
+				1BD029652E8C86E800A50B62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B0802702FABBCC7001AA605 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+		1B7D7B512FD53FE50021A5BE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B0802712FABBCC7001AA605 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B0802702FABBCC7001AA605 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+		1B55FC6A2E941BA900E53B3D /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftCSV;
+		};
+		1B7D7B522FD53FE50021A5BE /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7D7B512FD53FE50021A5BE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		1B7D7B542FD53FE50021A5BE /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B7D7B512FD53FE50021A5BE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		1BC7601C2E9182690053C718 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftCSV;
+		};
+		1BC7601F2E9182B80053C718 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1BD029342E8C86E700A50B62 /* Project object */;
+}

@@ -6,7 +6,7 @@ from typing import Optional, Tuple
 def parse_schedule_date(
     message: str,
     now: datetime,
-    timezone_str: str = "Europe/Helsinki",
+    timezone_str: str = "Europe/Moscow",
 ) -> Optional[Tuple[str, str, str]]:
     _ = timezone_str
     message_lower = message.lower()

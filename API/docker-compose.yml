@@ -1,7 +1,7 @@
 services:
-  myherzen-api:
+  mympsu-api:
     build: .
-    container_name: myherzen-api
+    container_name: mympsu-api
     restart: unless-stopped
     ports:
       - "127.0.0.1:8000:8000"
@@ -9,23 +9,23 @@ services:
       - .env
       - modules.flags.env
     environment:
-      DATABASE_URL: "postgresql://myherzen:${DATABASE_PASSWORD}@myherzen-db:5432/myherzen"
+      DATABASE_URL: "postgresql://mympsu:${DATABASE_PASSWORD}@mympsu-db:5432/mympsu"
       PYTHONPATH: /app
     depends_on:
-      - myherzen-db
+      - mympsu-db
 
-  myherzen-db:
+  mympsu-db:
     image: postgres:16
-    container_name: myherzen-db
+    container_name: mympsu-db
     restart: unless-stopped
     env_file:
       - .env
     environment:
-      POSTGRES_DB: myherzen
-      POSTGRES_USER: myherzen
+      POSTGRES_DB: mympsu
+      POSTGRES_USER: mympsu
       POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
     volumes:
-      - myherzen_postgres_data:/var/lib/postgresql/data
+      - mympsu_postgres_data:/var/lib/postgresql/data
 
 volumes:
-  myherzen_postgres_data:
+  mympsu_postgres_data:

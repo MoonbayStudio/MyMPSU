@@ -194,7 +194,7 @@ def _build_email_layout(
     support_url = f"{FRONTEND_BASE_URL}/support/"
     safe_logo_url = escape(logo_url, quote=True) if logo_url else None
     logo_html = (
-        f'<img src="{safe_logo_url}" width="40" height="40" alt="Мой Герцена" '
+        f'<img src="{safe_logo_url}" width="40" height="40" alt="Мой МПГУ" '
         'style="display:block;border:0;border-radius:10px;">'
         if safe_logo_url
         else (
@@ -221,7 +221,7 @@ def _build_email_layout(
                   <tr>
                     <td style="vertical-align:middle;padding-right:10px;">{logo_html}</td>
                     <td style="vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:28px;line-height:34px;font-weight:700;color:#151a2f;">
-                      Мой Герцена
+                      Мой МПГУ
                     </td>
                   </tr>
                 </table>
@@ -236,7 +236,7 @@ def _build_email_layout(
               <td align="center" style="padding:6px 18px 0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#728096;">
                 Если у вас есть вопросы, вы можете обратиться в наш раздел
                 <a href="{escape(support_url)}" style="color:#0969ff;text-decoration:underline;">«Помощь»</a><br>
-                Спасибо за то, что вы с нами! Искренне ваш, Мой Герцена.
+                Спасибо за то, что вы с нами! Искренне ваш, Мой МПГУ.
               </td>
             </tr>
             <tr>
@@ -348,21 +348,21 @@ def _code_html(code: str) -> str:
 
 async def send_password_reset_code(email: str, code: str) -> None:
     body_html = (
-        "<p style=\"margin:0 0 16px;\"><strong>Вы запросили сброс пароля в Мой Герцена.</strong></p>"
+        "<p style=\"margin:0 0 16px;\"><strong>Вы запросили сброс пароля в Мой МПГУ.</strong></p>"
         "<p style=\"margin:0 0 12px;\">Введите этот код в приложении:</p>"
         f"{_code_html(code)}"
         "<p style=\"margin:0;\">Код действует 15 минут. "
         "Если вы не запрашивали сброс пароля, просто проигнорируйте письмо.</p>"
     )
     text = (
-        "Вы запросили сброс пароля в Мой Герцена.\n"
+        "Вы запросили сброс пароля в Мой МПГУ.\n"
         f"Код для сброса пароля: {code}\n"
         "Код действует 15 минут."
     )
     await _send_template_email(
         action="password_reset_code",
         email=email,
-        subject="Сброс пароля в Мой Герцена",
+        subject="Сброс пароля в Мой МПГУ",
         text=text,
         body_html=body_html,
     )
@@ -370,20 +370,20 @@ async def send_password_reset_code(email: str, code: str) -> None:
 
 async def send_email_verification_code(email: str, code: str) -> None:
     body_html = (
-        "<p style=\"margin:0 0 16px;\"><strong>Подтвердите email для аккаунта Мой Герцена.</strong></p>"
+        "<p style=\"margin:0 0 16px;\"><strong>Подтвердите email для аккаунта Мой МПГУ.</strong></p>"
         "<p style=\"margin:0 0 12px;\">Введите этот код в приложении:</p>"
         f"{_code_html(code)}"
         "<p style=\"margin:0;\">Код действует 15 минут. Никому не передавайте его.</p>"
     )
     text = (
-        "Подтвердите email для аккаунта Мой Герцена.\n"
+        "Подтвердите email для аккаунта Мой МПГУ.\n"
         f"Ваш код подтверждения: {code}\n"
         "Код действует 15 минут. Никому не передавайте его."
     )
     await _send_template_email(
         action="signup_code",
         email=email,
-        subject="Код подтверждения Мой Герцена",
+        subject="Код подтверждения Мой МПГУ",
         text=text,
         body_html=body_html,
     )
@@ -393,21 +393,21 @@ async def send_contact_email_verification(email: str, token: str) -> None:
     verification_link = f"{FRONTEND_BASE_URL}/verify-email?token={token}"
     safe_link = escape(verification_link)
     body_html = (
-        "<p style=\"margin:0 0 16px;\"><strong>Подтвердите контактную почту Мой Герцена.</strong></p>"
+        "<p style=\"margin:0 0 16px;\"><strong>Подтвердите контактную почту Мой МПГУ.</strong></p>"
         "<p style=\"margin:0 0 16px;\">Откройте эту ссылку, чтобы завершить подтверждение email:</p>"
         f'<p style="margin:0 0 16px;word-break:break-all;"><a href="{safe_link}" '
         f'style="color:#0969ff;text-decoration:underline;">{safe_link}</a></p>'
         "<p style=\"margin:0;\">Ссылка действует 24 часа.</p>"
     )
     text = (
-        "Подтвердите контактную почту Мой Герцена:\n"
+        "Подтвердите контактную почту Мой МПГУ:\n"
         f"{verification_link}\n\n"
         "Ссылка действует 24 часа."
     )
     await _send_template_email(
         action="contact_email_link",
         email=email,
-        subject="Подтвердите email в Мой Герцена",
+        subject="Подтвердите email в Мой МПГУ",
         text=text,
         body_html=body_html,
         require_configured=True,
@@ -469,7 +469,7 @@ async def send_new_device_login_notification(
         "<p style=\"margin:0 0 16px;\">Вы получили данное уведомление, потому что "
         "вход выполнен с устройства, которое ранее не использовалось для этого аккаунта.</p>"
         "<p style=\"margin:0;\">Если вы не входили в аккаунт, пожалуйста, немедленно "
-        "свяжитесь с технической поддержкой Мой Герцена.</p>"
+        "свяжитесь с технической поддержкой Мой МПГУ.</p>"
     )
     text_lines = [
         f"{timestamp} зафиксирован вход в ваш аккаунт с использованием IP {ip_label}.",
@@ -481,14 +481,14 @@ async def send_new_device_login_notification(
     text_lines.extend(
         [
             "Вы получили данное уведомление, потому что вход выполнен с нового устройства.",
-            "Если это были не вы, свяжитесь с технической поддержкой Мой Герцена.",
+            "Если это были не вы, свяжитесь с технической поддержкой Мой МПГУ.",
         ]
     )
 
     await _send_template_email(
         action="new_device_login",
         email=email,
-        subject="Новый вход в аккаунт Мой Герцена",
+        subject="Новый вход в аккаунт Мой МПГУ",
         text="\n".join(text_lines),
         body_html=body_html,
         raise_on_failure=False,
@@ -506,9 +506,9 @@ async def send_password_security_notification(
     timestamp = _format_security_datetime(occurred_at)
     action_label = "создан" if action == "created" else "изменен"
     subject = (
-        "Пароль создан в Мой Герцена"
+        "Пароль создан в Мой МПГУ"
         if action == "created"
-        else "Пароль изменен в Мой Герцена"
+        else "Пароль изменен в Мой МПГУ"
     )
     ip_label = ip_address or "неизвестного IP"
     user_agent_label = normalize_optional_string(user_agent)
@@ -525,7 +525,7 @@ async def send_password_security_notification(
         "<p style=\"margin:0 0 16px;\">Вы получили это уведомление, потому что "
         "изменились настройки входа в ваш аккаунт.</p>"
         "<p style=\"margin:0;\">Если вы не выполняли это действие, пожалуйста, "
-        "немедленно свяжитесь с технической поддержкой Мой Герцена.</p>"
+        "немедленно свяжитесь с технической поддержкой Мой МПГУ.</p>"
     )
     text_lines = [
         f"{timestamp} пароль вашего аккаунта был {action_label} с использованием IP {ip_label}.",
@@ -535,7 +535,7 @@ async def send_password_security_notification(
     text_lines.extend(
         [
             "Вы получили это уведомление, потому что изменились настройки входа в ваш аккаунт.",
-            "Если это были не вы, свяжитесь с технической поддержкой Мой Герцена.",
+            "Если это были не вы, свяжитесь с технической поддержкой Мой МПГУ.",
         ]
     )
 

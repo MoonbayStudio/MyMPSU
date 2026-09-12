@@ -653,7 +653,7 @@ def resolve_ai_schedule_context(
         print(f"[AI Schedule] USING_TARGET_DATE={target_date}", flush=True)
         print(f"[AI Schedule] FETCHING_SCHEDULE_FOR={target_date}", flush=True)
         print(f"[AI Schedule] group_id={group_id}", flush=True)
-        source = "herzen_api"
+        source = "mympsu_schedule_api"
         lessons = fetch_schedule_lessons_from_api(group_id, target_date)
 
     generated_at_value = datetime.now(timezone.utc).isoformat()

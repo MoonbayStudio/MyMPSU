@@ -1,5 +1,5 @@
 services:
-  herzen-mcp:
+  my-mpsu-schedule-mcp:
     build: .
     restart: unless-stopped
     env_file:

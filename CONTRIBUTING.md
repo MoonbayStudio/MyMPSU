@@ -1,14 +1,14 @@
-# Участие в разработке MyHerzen
+# Участие в разработке MyMPSU
 
-Спасибо за желание развивать MyHerzen. Участвовать можно двумя способами:
+Спасибо за желание развивать MyMPSU. Участвовать можно двумя способами:
 
 1. предложить изменение в общий репозиторий через Pull Request;
-2. создать самостоятельный проект на основе MyHerzen и развивать его отдельно.
+2. создать самостоятельный проект на основе MyMPSU и развивать его отдельно.
 
 ## Fork, branch и Pull Request — в чём разница
 
 - **Fork** — ваша копия репозитория в собственном аккаунте или организации
-  GitHub. Он нужен, если у вас нет права записи в `MoonbayStudio/MyHerzen` или вы
+  GitHub. Он нужен, если у вас нет права записи в `MoonbayStudio/MyMPSU` или вы
   хотите развивать отдельную версию.
 - **Branch** — отдельная линия изменений внутри репозитория. Участники команды с
   правом записи могут создавать ветки непосредственно в основном репозитории.
@@ -21,13 +21,13 @@
 ## Как предложить изменение через fork
 
 1. Нажмите **Fork** на странице
-   <https://github.com/MoonbayStudio/MyHerzen>.
+   <https://github.com/MoonbayStudio/MyMPSU>.
 2. Клонируйте свою копию и добавьте исходный проект как `upstream`:
 
 ```bash
-git clone https://github.com/YOUR-ACCOUNT/MyHerzen.git
-cd MyHerzen
-git remote add upstream https://github.com/MoonbayStudio/MyHerzen.git
+git clone https://github.com/YOUR-ACCOUNT/MyMPSU.git
+cd MyMPSU
+git remote add upstream https://github.com/MoonbayStudio/MyMPSU.git
 ```
 
 3. Перед началом работы синхронизируйтесь и создайте ветку:
@@ -49,7 +49,7 @@ git push -u origin feature/short-description
 ```
 
 5. На GitHub нажмите **Compare & pull request**. В качестве base выберите
-   `MoonbayStudio/MyHerzen:main`, а в качестве head — ветку своего fork.
+   `MoonbayStudio/MyMPSU:main`, а в качестве head — ветку своего fork.
 6. Опишите цель, поведение для пользователей, способ проверки и известные
    ограничения. Один PR должен решать одну понятную задачу.
 
@@ -58,8 +58,8 @@ git push -u origin feature/short-description
 Если у вас есть доступ на запись, fork не обязателен:
 
 ```bash
-git clone https://github.com/MoonbayStudio/MyHerzen.git
-cd MyHerzen
+git clone https://github.com/MoonbayStudio/MyMPSU.git
+cd MyMPSU
 git switch -c fix/short-description
 # изменения и проверки
 git push -u origin fix/short-description
@@ -88,7 +88,7 @@ git push -u origin fix/short-description
 Fork на GitHub автоматически связан с исходным репозиторием. Дополнительная
 пометка в названии каждой ветки не нужна: авторство видно по коммитам и PR.
 
-Если вы распространяете отдельный проект или сборку на основе MyHerzen:
+Если вы распространяете отдельный проект или сборку на основе MyMPSU:
 
 - сохраните копию файла `LICENSE`;
 - сохраните относящиеся к проекту сведения из `NOTICE`;
@@ -100,9 +100,9 @@ Fork на GitHub автоматически связан с исходным р�
 Рекомендуемый текст:
 
 ```md
-Основано на проекте [MyHerzen](https://github.com/MoonbayStudio/MyHerzen),
-первоначально разработанном Nicolas Forest / Moonbay Studio.
-Исходный проект распространяется по лицензии Apache License 2.0.
+Основано на кодовой базе Moonbay Studio,
+первоначально разработанной Nicolas Forest / Moonbay Studio.
+Проект распространяется по лицензии Apache License 2.0.
 Эта версия является самостоятельной модификацией и не считается официальной,
 если не указано обратное.
 ```

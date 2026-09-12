@@ -1,0 +1,17 @@
+import { useEffect, useState } from "react";
+import { Bell, Database, Info, MonitorCog, Moon, Sun } from "lucide-react";
+import type { ApiEnvironment, ThemePreference } from "../../models/domain";
+import { useAppContext } from "../../app/AppContext";
+import { notificationService } from "../../platform/notificationService";
+import { platformService, type DesktopPlatform } from "../../platform/platformService";
+
+export function SettingsPage() {
+  const { preferences, updatePreferences } = useAppContext();
+  const [platform, setPlatform] = useState<DesktopPlatform>("browser");
+  const [notice, setNotice] = useState<string | null>(null);
+  useEffect(() => { void platformService.getPlatform().then(setPlatform); }, []);
+  const setTheme = (theme: ThemePreference) => void updatePreferences({ ...preferences, theme });
+  const setEnvironment = (apiEnvironment: ApiEnvironment) => void updatePreferences({ ...preferences, apiEnvironment });
+
+  return <section className="page settings-page"><header className="page-header"><div><span className="eyebrow">Приложение</span><h1>Настройки</h1><p>Внешний вид, подключение и desktop-возможности.</p></div></header><div className="settings-sections"><section className="settings-section"><header><Sun /><div><h2>Оформление</h2><p>Приложение может следовать системной теме.</p></div></header><div className="segmented" role="radiogroup" aria-label="Тема">{(["system", "light", "dark"] as const).map((theme) => <button role="radio" aria-checked={preferences.theme === theme} className={preferences.theme === theme ? "selected" : ""} key={theme} onClick={() => setTheme(theme)}>{theme === "system" ? <MonitorCog /> : theme === "light" ? <Sun /> : <Moon />}{theme === "system" ? "Системная" : theme === "light" ? "Светлая" : "Тёмная"}</button>)}</div></section><section className="settings-section"><header><Database /><div><h2>Данные</h2><p>Тестовый режим не обращается к неготовому API расписания.</p></div></header><label className="setting-row"><span><strong>Тестовое расписание</strong><small>Детерминированные случайные пары для каждой недели</small></span><input type="checkbox" role="switch" checked={preferences.useMockSchedule} onChange={(event) => void updatePreferences({ ...preferences, useMockSchedule: event.target.checked })} /></label><label className="setting-row"><span><strong>API environment</strong><small>Backend аккаунта и домашних заданий</small></span><select value={preferences.apiEnvironment} onChange={(event) => setEnvironment(event.target.value as ApiEnvironment)}><option value="production">Production</option><option value="development">Development · localhost</option></select></label></section><section className="settings-section"><header><Bell /><div><h2>Уведомления</h2><p>Разрешение запрашивается только после вашего действия.</p></div></header><div className="setting-row"><span><strong>Проверить уведомления</strong><small>{notice || "Отправить одно локальное тестовое уведомление"}</small></span><button className="button secondary" onClick={async () => setNotice((await notificationService.notify("Мой МПГУ", "Уведомления работают")) ? "Тест отправлен" : "Разрешение не выдано")}>Отправить тест</button></div></section><section className="settings-section"><header><Info /><div><h2>О приложении</h2><p>Общая кодовая база для desktop-платформ.</p></div></header><dl className="about-list"><div><dt>Версия</dt><dd>0.1.0</dd></div><div><dt>Платформа</dt><dd>{platform}</dd></div><div><dt>Технологии</dt><dd>Tauri 2 · React · TypeScript</dd></div></dl></section></div></section>;
+}

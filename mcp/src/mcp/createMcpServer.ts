@@ -46,19 +46,19 @@ function errorResult(error: unknown) {
 
 export function createMcpServer(provider: ScheduleProvider): McpServer {
   const server = new McpServer(
-    { name: "herzen-mcp", version: "0.1.0" },
+    { name: "my-mpsu-schedule-mcp", version: "0.1.0" },
     {
       instructions:
-        "Provides official Herzen University schedule data. Use schedule tools for classes and planning around lessons. Never invent missing university information. Ask for the student's group when it is not available in the conversation or client memory.",
+        "Provides schedule data from the configured MyMPSU API. Never invent missing university information. Ask for the student's group when it is not available in the conversation or client memory.",
     },
   );
 
   server.registerTool(
     "search_groups",
     {
-      title: "Search Herzen student groups",
+      title: "Search MPGU student groups",
       description:
-        "Search official Herzen University student groups by a full or partial group name. Use this to resolve a user's group before requesting their schedule. If several groups match, show the options and ask the user to choose; never guess.",
+        "Search MPGU student groups exposed by the configured MyMPSU API. If several groups match, show the options and ask the user to choose; never guess.",
       inputSchema: {
         query: z
           .string()
@@ -89,9 +89,9 @@ export function createMcpServer(provider: ScheduleProvider): McpServer {
   server.registerTool(
     "get_schedule",
     {
-      title: "Get the official Herzen class schedule",
+      title: "Get the MyMPSU class schedule",
       description:
-        "Get the official Herzen University class schedule for a student group and date range. Use whenever the user asks about classes, lessons, lectures, seminars, exams, when classes start or finish, free time between or after classes, or whether another plan fits before or after university. The group may be an official numeric ID or an unambiguous name. If the user's group is unknown, ask for it or call search_groups first. Dates use Europe/Moscow.",
+        "Get the configured MyMPSU schedule for a student group and date range. The group may be a numeric ID or an unambiguous name. If the user's group is unknown, ask for it or call search_groups first. Dates use Europe/Moscow.",
       inputSchema: {
         group: z
           .string()
@@ -132,7 +132,7 @@ export function createMcpServer(provider: ScheduleProvider): McpServer {
       const startedAt = performance.now();
       try {
         const result = await provider.getSchedule(input);
-        logTool("get_schedule", startedAt, true, undefined, "api.herzen.spb.ru");
+        logTool("get_schedule", startedAt, true, undefined, "api.mympsu.moonbaystudio.ru");
         return successResult(result);
       } catch (error) {
         const serialized = serializeError(error);
@@ -141,7 +141,7 @@ export function createMcpServer(provider: ScheduleProvider): McpServer {
           startedAt,
           false,
           serialized.code,
-          "api.herzen.spb.ru",
+          "api.mympsu.moonbaystudio.ru",
         );
         return errorResult(error);
       }

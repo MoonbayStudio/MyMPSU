@@ -1,0 +1,44 @@
+name: Desktop
+
+on:
+  push:
+    branches: [main]
+    paths: ["Desktop/**", ".github/workflows/desktop.yml"]
+  pull_request:
+    paths: ["Desktop/**", ".github/workflows/desktop.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, windows-latest, ubuntu-24.04]
+    runs-on: ${{ matrix.platform }}
+    defaults:
+      run:
+        working-directory: Desktop
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Linux dependencies
+        if: matrix.platform == 'ubuntu-24.04'
+        working-directory: .
+        run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: Desktop/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: Desktop/src-tauri
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - run: cargo check --manifest-path src-tauri/Cargo.toml
+      - run: npm run tauri:build -- --debug

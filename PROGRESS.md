@@ -1,14 +1,14 @@
-# MyHerzen Development Progress
+# MyMPSU Development Progress
 
 Last updated: 2026-07-05
 
-This is the public development progress log for MyHerzen. It tracks the main product direction, recent completed work, known gaps, and the weekly testing flow.
+This is the public development progress log for MyMPSU. It tracks the main product direction, recent completed work, known gaps, and the weekly testing flow.
 
 Do not store secrets, credentials, private server notes, signing details, local machine paths, private keys, tokens, or internal deployment instructions in this file.
 
 ## Current Product Direction
 
-MyHerzen is moving toward feature parity across iOS, Android, backend, and web. The current focus is Android parity with the richer iOS behavior around runtime configuration, AI chat, role requests, accessibility, app security, premium features, admin tools, themes, and active notifications.
+MyMPSU is moving toward feature parity across iOS, Android, backend, and web. The current focus is Android parity with the richer iOS behavior around runtime configuration, AI chat, role requests, accessibility, app security, premium features, admin tools, themes, and active notifications.
 
 ## Current Android Status
 
@@ -42,7 +42,7 @@ The largest remaining gaps are not in basic schedule browsing, but in product po
 
 Goal:
 
-- Make a new, empty MyHerzen backend installation reproducible without
+- Make a new, empty MyMPSU backend installation reproducible without
   transferring existing user accounts.
 
 Completed:

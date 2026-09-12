@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'ru.moonbaystudio.myherzen'
+    namespace 'ru.moonbaystudio.mympsu'
     compileSdk 34
 
     defaultConfig {
-        applicationId "ru.moonbaystudio.myherzen"
+        applicationId "ru.moonbaystudio.mympsu"
         minSdk 21
         targetSdk 34
         versionCode 1
