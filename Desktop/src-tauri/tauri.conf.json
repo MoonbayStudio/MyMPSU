@@ -47,6 +47,9 @@
     "createUpdaterArtifacts": false,
     "linux": { "deb": { "depends": [] } },
     "macOS": { "minimumSystemVersion": "10.15" },
-    "windows": { "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true } }
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true },
+      "wix": { "language": "ru-RU" }
+    }
   }
 }
