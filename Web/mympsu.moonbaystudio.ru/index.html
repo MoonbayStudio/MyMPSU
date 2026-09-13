@@ -7,9 +7,9 @@
   <meta name="description" content="Учебное пространство для студентов и преподавателей: расписание, материалы, заметки и синхронизация между устройствами.">
   <meta name="theme-color" content="#050816">
   <link rel="canonical" href="https://mympsu.moonbaystudio.ru/">
-  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="any">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="img/logo.png">
+  <link rel="icon" href="/favicon.ico?v=20260913-moonbay" type="image/x-icon" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=20260913-moonbay" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://moonbaystudio.ru/img/logo.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Мой МПГУ">
   <meta property="og:title" content="Мой МПГУ">
@@ -36,14 +36,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .home-navigation { flex-wrap: wrap; }
+    .home-brand-links { display: flex; align-items: center; gap: 12px; }
+    .home-navigation .top-nav-actions { margin-left: auto; }
+    @media (max-width: 640px) {
+      .home-navigation .top-nav-actions { width: 100%; }
+    }
+  </style>
 </head>
 <body>
   <div class="page-bg"></div>
   <header class="top-nav">
-    <div class="top-nav-inner">
+    <div class="top-nav-inner home-navigation">
+      <div class="home-brand-links">
+        <a class="nav-pill" href="https://dev.moonbaystudio.ru/projects/mympsu/" aria-label="Вернуться на страницу проекта Мой МПГУ в Moonbay Dev">← Moonbay Dev</a>
       <a class="brand-button" href="./" aria-label="Мой МПГУ">
         <img src="img/logo.png" alt="Мой МПГУ">
       </a>
+      </div>
       <nav class="top-nav-actions" aria-label="Навигация">
         <a class="nav-pill" href="news/">Новости</a> <a class="nav-pill" href="download/">Скачать</a> <a class="nav-pill" href="support/">Поддержка</a> <a class="nav-pill" href="account/#register" data-auth-link="guest">Регистрация</a> <a class="nav-pill" href="account/#login" data-auth-link="guest">Вход</a> <a class="nav-pill" href="account/" data-auth-link="account" hidden>Аккаунт</a> <button type="button" class="nav-pill" data-auth-link="account" data-auth-action="logout" hidden>Выйти</button>
       </nav>
@@ -116,7 +127,7 @@
       </div>
     </div>
   </footer>
-  <script src="auth.js?v=20260613-account-ui-1"></script>
+  <script src="auth.js?v=20260913-signup-1"></script>
   <script src="nav.js?v=20260613-account-ui-1"></script>
   <script src="cookies.js?v=20260613-account-ui-1"></script>
 </body>

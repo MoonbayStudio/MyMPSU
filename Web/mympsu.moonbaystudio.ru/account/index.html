@@ -8,9 +8,9 @@
   <meta name="description" content="Аккаунт Мой МПГУ: вход, регистрация, профиль, сессии, почта, пароль и управление доступом.">
   <meta name="theme-color" content="#050816">
   <link rel="canonical" href="https://mympsu.moonbaystudio.ru/account/">
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" sizes="any">
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="../img/logo.png">
+  <link rel="icon" href="/favicon.ico?v=20260913-moonbay" type="image/x-icon" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=20260913-moonbay" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://moonbaystudio.ru/img/logo.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Мой МПГУ">
   <meta property="og:title" content="Мой МПГУ — Аккаунт">
@@ -41,7 +41,7 @@
   <main class="container">
     <section class="panel section-panel account-panel">
       <div class="section-head account-head"><h1>Аккаунт</h1></div>
-      <p id="authMessage" class="auth-message" hidden></p>
+      <p id="authMessage" class="auth-message" role="status" aria-live="polite" hidden></p>
       <div id="loggedOutState" class="auth-grid" hidden>
         <article id="login" class="auth-card">
           <h3>Вход</h3>
@@ -56,13 +56,20 @@
         <article id="register" class="auth-card">
           <h3>Регистрация</h3>
           <form id="registerForm" class="auth-form">
-            <label>Имя<input id="registerName" type="text" name="displayName" autocomplete="name"></label>
+            <label>Имя<input id="registerName" type="text" name="displayName" autocomplete="name" minlength="2" maxlength="40" required></label>
             <label>Почта<input id="registerEmail" type="email" name="email" autocomplete="email" required></label>
-            <label>Пароль<input id="registerPassword" type="password" name="password" autocomplete="new-password" required></label>
+            <label>Пароль<input id="registerPassword" type="password" name="password" autocomplete="new-password" minlength="8" maxlength="128" required></label>
             <button type="submit" class="button primary">Зарегистрироваться</button>
           </form>
           <button type="button" id="registerAppleButton" class="button secondary apple-button">Зарегистрироваться через Apple</button>
           <div id="registerGoogleButton" class="google-button google-signin-slot" aria-label="Зарегистрироваться через Google" data-loading-label="Google Login загружается..." data-fallback-label="Зарегистрироваться через Google"></div>
+          <h3>Подтверждение почты</h3>
+          <p class="form-actions-note">Уже получили код регистрации? Введите почту и код из письма.</p>
+          <form id="signupVerifyForm" class="auth-form">
+            <label>Почта<input id="signupVerifyEmail" type="email" name="email" autocomplete="email" required></label>
+            <label>Код из письма<input id="signupVerifyCode" type="text" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="12" required></label>
+            <button type="submit" class="button primary">Подтвердить и войти</button>
+          </form>
         </article>
       </div>
       <div id="loggedInState" class="profile-page" hidden>
@@ -156,9 +163,9 @@
   </footer>
   <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="auth.js?v=20260613-account-ui-1"></script>
+  <script src="auth.js?v=20260913-signup-1"></script>
   <script src="nav.js?v=20260613-account-ui-1"></script>
-  <script src="account.js?v=20260613-account-ui-1"></script>
+  <script src="account.js?v=20260913-signup-1"></script>
   <script src="cookies.js?v=20260613-account-ui-1"></script>
 </body>
 </html>

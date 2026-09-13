@@ -337,9 +337,6 @@
     try {
       var data = await authenticateWithCandidates(
         [
-          "/auth/email/login",
-          "/auth/password/login",
-          "/auth/sign-in",
           "/auth/login"
         ],
         {
@@ -381,26 +378,24 @@
     }
 
     try {
-      var data = await authenticateWithCandidates(
-        [
-          "/auth/email/register",
-          "/auth/password/register",
-          "/auth/sign-up",
-          "/auth/register"
-        ],
+      var data = await requestJson(
+        "/auth/signup",
         {
           displayName: cleanName,
-          fullName: cleanName,
           email: cleanEmail,
-          password: cleanPassword
+          password: cleanPassword,
+          platform: "web"
         }
       );
-      var user = getUserFromResponse(data) || await fetchCurrentUser();
+      if (!data || data.status !== "verification_required") {
+        throw new Error("invalid_signup_response");
+      }
 
       return {
         ok: true,
-        message: "Аккаунт создан. Вход выполнен.",
-        user: user
+        verificationRequired: true,
+        email: data.email || cleanEmail,
+        message: "Введите код из письма, чтобы подтвердить почту и завершить регистрацию."
       };
     } catch (error) {
       console.error(error);
@@ -413,6 +408,25 @@
           validation: "Проверьте почту и пароль.",
           fallback: "Не удалось создать аккаунт. Попробуйте позже."
         })
+      };
+    }
+  }
+
+  async function verifySignup(email, code) {
+    try {
+      var data = await requestJson("/auth/signup/verify", {
+        email: email.trim(),
+        code: code.trim(),
+        platform: "web"
+      });
+      saveAuthResponse(data);
+      return { ok: true, user: getUserFromResponse(data) || await fetchCurrentUser() };
+    } catch (error) {
+      return {
+        ok: false,
+        message: error.status === 400
+          ? "Код неверен или истёк. Проверьте почту и код; для нового кода отправьте форму регистрации ещё раз."
+          : "Не удалось подтвердить почту. Попробуйте позже."
       };
     }
   }
@@ -672,6 +686,7 @@
     loginWithGoogle: loginWithGoogle,
     loginWithEmail: loginWithEmail,
     registerWithEmail: registerWithEmail,
+    verifySignup: verifySignup,
     handleAppleCredential: handleAppleCredential,
     handleGoogleCredential: handleGoogleCredential,
     getUserFromResponse: getUserFromResponse,

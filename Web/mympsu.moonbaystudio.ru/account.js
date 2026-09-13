@@ -9,6 +9,9 @@
   var loggedInStateEl = document.getElementById("loggedInState");
   var loginForm = document.getElementById("loginForm");
   var registerForm = document.getElementById("registerForm");
+  var signupVerifyForm = document.getElementById("signupVerifyForm");
+  var signupVerifyEmail = document.getElementById("signupVerifyEmail");
+  var signupVerifyCode = document.getElementById("signupVerifyCode");
   var loginAppleButton = document.getElementById("loginAppleButton");
   var registerAppleButton = document.getElementById("registerAppleButton");
   var loginGoogleButton = document.getElementById("loginGoogleButton");
@@ -502,9 +505,31 @@
           registerEmailEl.value,
           registerPasswordEl.value
         );
-        await handleAuthResult(result, "Не удалось создать аккаунт.");
+        if (result && result.ok && result.verificationRequired) {
+          signupVerifyEmail.value = result.email;
+          registerPasswordEl.value = "";
+          signupVerifyCode.focus();
+          setMessage(result.message, "info");
+        } else {
+          await handleAuthResult(result, "Не удалось создать аккаунт.");
+        }
       } finally {
         setLoading(submitButton, false);
+      }
+    });
+  }
+
+  if (signupVerifyForm) {
+    signupVerifyForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      var button = signupVerifyForm.querySelector('button[type="submit"]');
+      try {
+        setLoading(button, true, "Подтверждаем...");
+        var result = await auth.verifySignup(signupVerifyEmail.value, signupVerifyCode.value);
+        await handleAuthResult(result, "Не удалось подтвердить почту.");
+        if (result.ok) signupVerifyForm.reset();
+      } finally {
+        setLoading(button, false);
       }
     });
   }
